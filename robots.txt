@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://0xblackbot.github.io/not-store/sitemap.xml
