@@ -1,7 +1,19 @@
+import {useEffect} from 'react';
 import {Link, useLocation} from 'react-router-dom';
+
+import {useDispatch} from '../store';
+import {useSelectCatalogue} from '../store/catalogue/selectors';
+import {fetchCatalogue} from '../store/catalogue/thunk';
 
 export const MainPage = () => {
     const location = useLocation();
+    const dispatch = useDispatch();
+
+    const catalogue = useSelectCatalogue();
+
+    useEffect(() => {
+        dispatch(fetchCatalogue());
+    }, []);
 
     return (
         <div>
@@ -9,20 +21,17 @@ export const MainPage = () => {
             <Link to={`/cart`} state={{background: location}} className="block">
                 Cart
             </Link>
-            <Link
-                to={`/item/1`}
-                state={{background: location}}
-                className="block"
-            >
-                Account 1
-            </Link>
-            <Link
-                to={`/item/2`}
-                state={{background: location}}
-                className="block"
-            >
-                Account 2
-            </Link>
+
+            {catalogue.map(item => (
+                <Link
+                    key={item.id}
+                    to={`/item/${item.id}`}
+                    state={{background: location}}
+                    className="block"
+                >
+                    {item.name}
+                </Link>
+            ))}
         </div>
     );
 };
