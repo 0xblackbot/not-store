@@ -34,6 +34,7 @@
     "@types/react-dom": "^19.1.6",
     "@types/react-helmet": "^6.1.11",
     "@types/react-window": "^1.8.8",
+    "@types/telegram-web-app": "^7.10.1",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react": "^4.5.1",
