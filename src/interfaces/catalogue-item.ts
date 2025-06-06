@@ -11,3 +11,6 @@ export interface CatalogueItem {
     };
     images: string[];
 }
+
+// used for fast get via id
+export type CatalogueRecord = Record<number, CatalogueItem>;

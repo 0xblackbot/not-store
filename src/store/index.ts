@@ -1,4 +1,7 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {
+    configureStore,
+    createSelector as rawCreateSelector
+} from '@reduxjs/toolkit';
 import {
     useDispatch as useRawDispatch,
     useSelector as useRawSelector
@@ -34,8 +37,9 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof store.getState>;
 type AppDispatch = typeof store.dispatch;
 
 export const useDispatch = useRawDispatch.withTypes<AppDispatch>();
 export const useSelector = useRawSelector.withTypes<RootState>();
+export const createSelector = rawCreateSelector.withTypes<RootState>();
