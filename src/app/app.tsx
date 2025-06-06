@@ -1,3 +1,11 @@
+import {BrowserRouter} from 'react-router-dom';
+
+import {MainRouter} from '../navigation/main-router';
+
 export const App = () => {
-    return <p>Hello</p>;
+    return (
+        <BrowserRouter>
+            <MainRouter />
+        </BrowserRouter>
+    );
 };
