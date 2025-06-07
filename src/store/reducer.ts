@@ -5,15 +5,21 @@ import storage from 'redux-persist/es/storage';
 import {catalogueSlice} from './catalogue/slice';
 import {historySlice} from './history/slice';
 
-const rootReducer = combineReducers({
-    catalogue: catalogueSlice.reducer,
-    history: historySlice.reducer
+export const persistedReducer = combineReducers({
+    catalogue: persistReducer(
+        {
+            key: 'catalogue',
+            storage,
+            blacklist: ['isLoading']
+        },
+        catalogueSlice.reducer
+    ),
+    history: persistReducer(
+        {
+            key: 'history',
+            storage,
+            blacklist: ['isLoading']
+        },
+        historySlice.reducer
+    )
 });
-
-export const persistedReducer = persistReducer(
-    {
-        key: 'not-store-root',
-        storage
-    },
-    rootReducer
-);

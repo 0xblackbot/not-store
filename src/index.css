@@ -19,11 +19,15 @@
 @theme {
     --c-text-primary: #000000;
     --c-bg-bw: #FFFFFF;
+    --c-button-additional: rgba(0, 0, 0, 0.08);
+    --c-button-bw: #000000;
 }
 
 .dark {
     --c-text-primary: #FFFFFF;
     --c-bg-bw: #000000;
+    --c-button-additional: rgba(255, 255, 255, 0.08);
+    --c-button-bw: #FFFFFF;
 }
 
 @layer base {

@@ -1,19 +1,15 @@
-import {useEffect, useMemo} from 'react';
+import {useMemo} from 'react';
 import {FixedSizeList} from 'react-window';
 
 import {HistoryListItem, HistoryListItemProps} from './history-list-item';
 import {UNSAFE_INIT_DATA} from '../../globals';
-import {useDispatch} from '../../store';
 import {useSelectHistory} from '../../store/history/selectors';
-import {fetchHistory} from '../../store/history/thunk';
 import {useDivHeight} from '../../utils/div-height.utils';
 
 const ITEM_SIZE = 68 + 8;
 
 export const AccountPage = () => {
     const divHeight = useDivHeight();
-    const dispatch = useDispatch();
-
     const history = useSelectHistory();
 
     const historyListProps = useMemo<HistoryListItemProps>(
@@ -25,10 +21,6 @@ export const AccountPage = () => {
     );
 
     const isEmpty = historyListProps.dataArray.length === 0;
-
-    useEffect(() => {
-        dispatch(fetchHistory());
-    }, []);
 
     return (
         <div

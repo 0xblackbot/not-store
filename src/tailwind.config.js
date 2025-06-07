@@ -8,11 +8,11 @@ export default {
                 'inset-right':
                     'calc(var(--tg-safe-area-inset-right, 0px) + var(--tg-content-safe-area-inset-right, 0px))',
                 'inset-bottom':
-                    'calc(var(--tg-safe-area-inset-bottom, 0px) + var(--tg-content-safe-area-inset-bottom, 0px))',
+                    'calc(var(--tg-safe-area-inset-bottom, 34px) + var(--tg-content-safe-area-inset-bottom, 0px))',
                 'inset-left':
                     'calc(var(--tg-safe-area-inset-left, 0px) + var(--tg-content-safe-area-inset-left, 0px))',
                 'nav-bar':
-                    'calc(49px + calc(var(--tg-safe-area-inset-bottom, 0px) + var(--tg-content-safe-area-inset-bottom, 0px)))'
+                    'calc(49px + calc(var(--tg-safe-area-inset-bottom, 34px) + var(--tg-content-safe-area-inset-bottom, 0px)))'
             }
         }
     }

@@ -5,7 +5,7 @@ import {fetchHistory} from './thunk';
 
 export const historySlice = createSlice({
     name: 'history',
-    initialState: {data: [], isLoading: false, error: null} as HistoryState,
+    initialState: {data: [], isLoading: true, error: null} as HistoryState,
     reducers: {},
     extraReducers: builder => {
         builder

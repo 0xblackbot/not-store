@@ -28,7 +28,7 @@ export const HistoryListItem: FC<
                 src={item.data.images[0]}
                 className="w-15 aspect-square object-cover rounded-[12px]"
             />
-            <div className="flex-1 flex justify-between items-center truncate">
+            <div className="flex flex-1 justify-between items-center truncate">
                 <div className="truncate">
                     <p className="price-text truncate opacity-50 ">
                         {item.data.category}

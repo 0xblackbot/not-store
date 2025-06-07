@@ -9,7 +9,7 @@ export const catalogueSlice = createSlice({
     initialState: {
         data: [],
         record: {},
-        isLoading: false,
+        isLoading: true,
         error: null
     } as CatalogueState,
     reducers: {},

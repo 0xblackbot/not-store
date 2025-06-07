@@ -1,18 +1,10 @@
 import {animate, motion, useMotionValue} from 'motion/react';
-import {useEffect} from 'react';
-import {useLocation, useNavigate} from 'react-router-dom';
 
 import {CartSheet} from '../pages/cart-sheet';
+import {useNavigateBack} from '../utils/navigation.utils';
 
 export const CartSheetMotion = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const hasBackground = Boolean(location.state?.background);
-
-    // Redirect deep links
-    useEffect(() => {
-        if (!hasBackground) navigate('/', {replace: true});
-    }, [hasBackground, navigate]);
+    const navigateBack = useNavigateBack();
 
     const y = useMotionValue(0);
     const snapBack = () =>
@@ -26,12 +18,12 @@ export const CartSheetMotion = () => {
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
                 exit={{opacity: 0}}
-                onClick={() => navigate(-1)}
+                onClick={navigateBack}
             />
 
             {/* sheet */}
             <motion.div
-                className="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-2xl shadow-lg p-4 touch-none"
+                className="fixed inset-x-0 bottom-0 z-50 bg-bw shadow-lg touch-none"
                 style={{y}}
                 initial={{y: '100%'}}
                 animate={{y: 0}}
@@ -40,10 +32,10 @@ export const CartSheetMotion = () => {
                 drag="y"
                 dragDirectionLock
                 dragConstraints={{top: 0}}
-                dragElastic={0.1}
+                dragElastic={{top: 0, bottom: 1}}
                 dragMomentum={false}
                 onDragEnd={(_, info) => {
-                    if (info.offset.y > 90) navigate(-1);
+                    if (info.offset.y > 90) navigateBack();
                     else snapBack();
                 }}
             >

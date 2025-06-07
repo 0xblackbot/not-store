@@ -25,7 +25,7 @@ export const MainRouter = () => {
                     </Routes>
                 )}
 
-                {location.pathname === '/cart' && background && (
+                {location.pathname === '/cart' && (
                     <Routes location={location}>
                         <Route path="cart" element={<CartSheetMotion />} />
                     </Routes>

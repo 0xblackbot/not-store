@@ -1,27 +1,18 @@
-import {useEffect} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 
 import {MainPageHeader} from './header';
-import {useDispatch} from '../../store';
 import {useSelectCatalogue} from '../../store/catalogue/selectors';
-import {fetchCatalogue} from '../../store/catalogue/thunk';
 
 export const MainPage = () => {
     const location = useLocation();
-    const dispatch = useDispatch();
-
     const catalogue = useSelectCatalogue();
-
-    useEffect(() => {
-        dispatch(fetchCatalogue());
-    }, []);
 
     return (
         <>
             <MainPageHeader />
 
             <div className="grid grid-cols-2 gap-3 justify-items-center px-4">
-                {catalogue.slice(0, 7).map(item => (
+                {catalogue.map(item => (
                     <Link
                         key={item.id}
                         to={`/item/${item.id}`}

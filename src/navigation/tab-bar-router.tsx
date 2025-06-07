@@ -1,4 +1,4 @@
-import {Routes, Route, Navigate, NavLink} from 'react-router-dom';
+import {Routes, Route, NavLink} from 'react-router-dom';
 
 import {UNSAFE_INIT_DATA} from '../globals';
 import NotIcon from '../icons/not.svg?react';
@@ -12,7 +12,7 @@ export const TabBarRouter = () => {
                 <Routes>
                     <Route index element={<MainPage />} />
                     <Route path="account" element={<AccountPage />} />
-                    <Route path="*" element={<Navigate to="/" replace />} />
+                    <Route path="*" element={<MainPage />} />
                 </Routes>
             </div>
             <div className="h-nav-bar fixed inset-x-0 bottom-0 z-10 bg-bw">

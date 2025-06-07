@@ -1,8 +1,8 @@
 import {animate, motion, useMotionValue} from 'motion/react';
 import {FC} from 'react';
-import {useNavigate} from 'react-router-dom';
 
 import {ItemPage} from '../pages/item-page';
+import {useNavigateBack} from '../utils/navigation.utils';
 
 interface Props {
     isModal: boolean;
@@ -10,15 +10,15 @@ interface Props {
 
 export const ItemPageMotion: FC<Props> = ({isModal}) => {
     const slideIn = isModal;
-    const navigate = useNavigate();
     const x = useMotionValue(0);
+    const navigateBack = useNavigateBack();
 
     const snapBack = () =>
         animate(x, 0, {type: 'spring', stiffness: 320, damping: 28});
 
     return (
         <motion.div
-            className="fixed inset-0 z-40 bg-white overflow-y-auto touch-none"
+            className="fixed inset-0 flex flex-col z-40 bg-bw pt-inset-top overflow-y-auto overscroll-contain"
             style={{x}}
             initial={{x: slideIn ? '100%' : 0}}
             animate={{x: 0}}
@@ -26,10 +26,11 @@ export const ItemPageMotion: FC<Props> = ({isModal}) => {
             transition={{duration: slideIn ? 0.3 : 0, ease: 'easeInOut'}}
             drag="x"
             dragDirectionLock
-            dragElastic={0.1}
+            dragConstraints={{left: 0}}
+            dragElastic={{left: 0, right: 1}}
             dragMomentum={false}
             onDragEnd={(_, info) => {
-                if (info.offset.x > 90) navigate(-1);
+                if (info.offset.x > 90) navigateBack();
                 else snapBack();
             }}
         >
