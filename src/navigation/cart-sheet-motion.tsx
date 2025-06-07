@@ -19,6 +19,7 @@ export const CartSheetMotion = () => {
                 animate={{opacity: 1}}
                 exit={{opacity: 0}}
                 onClick={navigateBack}
+                onTouchStart={navigateBack}
             />
 
             {/* sheet */}
