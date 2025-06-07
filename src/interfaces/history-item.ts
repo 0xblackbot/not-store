@@ -9,4 +9,5 @@ export interface HistoryItem {
 
 export interface HistoryDisplayItem extends HistoryItem {
     data: CatalogueItem;
+    timestampFormated: string;
 }

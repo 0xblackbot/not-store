@@ -36,7 +36,9 @@ export const HistoryListItem: FC<
                     <p className="h4 truncate">{item.data.name}</p>
                 </div>
                 <div className="text-right ">
-                    <p className="price-text  opacity-50">{item.timestamp}</p>
+                    <p className="price-text  opacity-50">
+                        {item.timestampFormated}
+                    </p>
                     <p className="h4">
                         {item.total} {item.currency}
                     </p>

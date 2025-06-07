@@ -1,4 +1,5 @@
 import {HistoryDisplayItem} from '../../interfaces/history-item';
+import {formatDate} from '../../utils/format.utils';
 import {createSelector, useSelector} from '../index';
 
 export const useSelectHistoryLoading = () =>
@@ -13,7 +14,9 @@ const historySelector = createSelector(
             const data = catalogueRecord[historyItem.id];
 
             if (data) {
-                result.push({...historyItem, data});
+                const timestampFormated = formatDate(historyItem.timestamp);
+
+                result.push({...historyItem, timestampFormated, data});
             }
         }
 
