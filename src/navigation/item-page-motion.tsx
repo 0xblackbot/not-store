@@ -1,7 +1,7 @@
 import {animate, motion, useMotionValue} from 'motion/react';
 import {FC} from 'react';
 
-import {ItemPage} from '../pages/item-page';
+import {ItemPage} from '../pages/item-page/item-page';
 import {useNavigateBack} from '../utils/navigation.utils';
 
 interface Props {

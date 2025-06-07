@@ -1,12 +1,13 @@
 import {useEffect, useMemo} from 'react';
 import {useParams} from 'react-router-dom';
 
-import ShareIcon from '../icons/share.svg?react';
+import {Thumbnails} from './thumbnails';
+import ShareIcon from '../../icons/share.svg?react';
 import {
     useSelectCatalogueItem,
     useSelectCatalogueLoading
-} from '../store/catalogue/selectors';
-import {useNavigateBack} from '../utils/navigation.utils';
+} from '../../store/catalogue/selectors';
+import {useNavigateBack} from '../../utils/navigation.utils';
 
 export const ItemPage = () => {
     const params = useParams();
@@ -55,23 +56,7 @@ export const ItemPage = () => {
                 ))}
             </div>
 
-            <div className="flex flex-1 items-start justify-center overflow-hidden px-4">
-                <img
-                    src={item.images[1]}
-                    className="w-full h-full object-cover rounded-[20px]"
-                />
-            </div>
-
-            <div className="flex gap-2 py-2 px-4">
-                <img
-                    src={item.images[0]}
-                    className="h-25 w-25 rounded-[16px] object-cover"
-                />
-                <img
-                    src={item.images[1]}
-                    className="h-25 w-25 rounded-[16px] object-cover"
-                />
-            </div>
+            <Thumbnails images={item.images} />
 
             <div className="grid grid-cols-2 gap-3 h-nav-bar box-content pt-2 px-4">
                 <div className="flex h-12.5 justify-center items-center rounded-[12px] bg-[var(--c-button-additional)]">
