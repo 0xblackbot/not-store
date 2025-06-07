@@ -34,7 +34,12 @@
 
     svg, svg * {
         fill: currentColor;
+
     }
+}
+
+@layer utilities {
+    .bg-bw { background-color: var(--c-bg-bw); }
 }
 
 /* ── reusable text styles ─────────────────────────────────── */
