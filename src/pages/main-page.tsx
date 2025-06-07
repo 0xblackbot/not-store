@@ -16,9 +16,51 @@ export const MainPage = () => {
     }, []);
 
     return (
-        <div>
+        <>
             <p>Main page</p>
-            <Link to={`/cart`} state={{background: location}} className="block">
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <p>Main page</p>
+            <Link to={`/cart`} state={{background: location}}>
                 Cart
             </Link>
 
@@ -27,11 +69,10 @@ export const MainPage = () => {
                     key={item.id}
                     to={`/item/${item.id}`}
                     state={{background: location}}
-                    className="block"
                 >
                     {item.name}
                 </Link>
             ))}
-        </div>
+        </>
     );
 };

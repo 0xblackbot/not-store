@@ -32,7 +32,6 @@ export const AccountPage = () => {
                     key={item.timestamp}
                     to={`/item/${item.id}`}
                     state={{background: location}}
-                    className="block"
                 >
                     {item.data.name}
                 </Link>
