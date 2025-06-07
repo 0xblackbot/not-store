@@ -23,11 +23,11 @@ export const ItemPage = () => {
         }
     }, [item, isLoading]);
 
-    if (!item) {
-        return null;
-    }
-
     const tagsData = useMemo(() => {
+        if (!item) {
+            return [];
+        }
+
         const fabricArray = item.tags.fabric.split(' ');
 
         return [
@@ -36,6 +36,10 @@ export const ItemPage = () => {
             {value: fabricArray[0], info: fabricArray[1]}
         ];
     }, [item]);
+
+    if (!item) {
+        return null;
+    }
 
     return (
         <>
