@@ -20,11 +20,6 @@ export const MainPage = () => {
                         state={{background: location}}
                         className="flex flex-col gap-2 w-full"
                     >
-                        {/*<img*/}
-                        {/*    src={item.images[0]}*/}
-                        {/*    className="w-full aspect-square object-cover rounded-[16px]"*/}
-                        {/*/>*/}
-
                         <ImagesCarousel images={item.images} />
 
                         <div className="flex flex-col gap-0.5 px-2">

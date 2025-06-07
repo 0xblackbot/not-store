@@ -1,8 +1,10 @@
 import XMarkIcon from '../icons/x-mark.svg?react';
-import {useNavigateBack} from '../utils/navigation.utils';
+import {useBackButton, useNavigateBack} from '../utils/navigation.utils';
 
 export const CartSheet = () => {
     const navigateBack = useNavigateBack();
+
+    useBackButton();
 
     return (
         <div className="relative">

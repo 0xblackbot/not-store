@@ -1,13 +1,14 @@
-import {useEffect, useMemo} from 'react';
+import {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
+import {Tags} from './tags';
 import {Thumbnails} from './thumbnails';
 import ShareIcon from '../../icons/share.svg?react';
 import {
     useSelectCatalogueItem,
     useSelectCatalogueLoading
 } from '../../store/catalogue/selectors';
-import {useNavigateBack} from '../../utils/navigation.utils';
+import {useBackButton, useNavigateBack} from '../../utils/navigation.utils';
 
 export const ItemPage = () => {
     const params = useParams();
@@ -18,24 +19,11 @@ export const ItemPage = () => {
 
     useEffect(() => {
         if (!item && !isLoading) {
-            console.log('item not found');
             navigateBack();
         }
     }, [item, isLoading]);
 
-    const tagsData = useMemo(() => {
-        if (!item) {
-            return [];
-        }
-
-        const fabricArray = item.tags.fabric.split(' ');
-
-        return [
-            {value: item.price, info: item.currency},
-            {value: item.left, info: 'left'},
-            {value: fabricArray[0], info: fabricArray[1]}
-        ];
-    }, [item]);
+    useBackButton();
 
     if (!item) {
         return null;
@@ -48,17 +36,8 @@ export const ItemPage = () => {
                 <ShareIcon className="w-7 h-7" />
             </div>
             <p className="body-text p-4">{item.description}</p>
-            <div className="flex flex-wrap gap-2 pt-4 pr-4 pb-5 pl-4">
-                {tagsData.map((item, index) => (
-                    <div
-                        key={index}
-                        className="price-text flex gap-0.5 min-w-4.5 rounded-[10px] py-0.5 px-2 bg-[var(--c-button-additional)]"
-                    >
-                        <p>{item.value}</p>
-                        <p className="opacity-50 uppercase">{item.info}</p>
-                    </div>
-                ))}
-            </div>
+
+            <Tags item={item} />
 
             <Thumbnails images={item.images} />
 
