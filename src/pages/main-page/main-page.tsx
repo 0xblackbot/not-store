@@ -1,6 +1,7 @@
 import {Link, useLocation} from 'react-router-dom';
 
 import {MainPageHeader} from './header';
+import {ImagesCarousel} from './images-carousel';
 import {useSelectCatalogue} from '../../store/catalogue/selectors';
 
 export const MainPage = () => {
@@ -19,10 +20,13 @@ export const MainPage = () => {
                         state={{background: location}}
                         className="flex flex-col gap-2 w-full"
                     >
-                        <img
-                            src={item.images[0]}
-                            className="w-full aspect-square object-cover rounded-[16px]"
-                        />
+                        {/*<img*/}
+                        {/*    src={item.images[0]}*/}
+                        {/*    className="w-full aspect-square object-cover rounded-[16px]"*/}
+                        {/*/>*/}
+
+                        <ImagesCarousel images={item.images} />
+
                         <div className="flex flex-col gap-0.5 px-2">
                             <p className="h4-text truncate">{item.name}</p>
                             <p className="caption-text truncate">
