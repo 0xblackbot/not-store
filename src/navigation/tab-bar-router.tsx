@@ -2,7 +2,7 @@ import {Routes, Route, Navigate, NavLink} from 'react-router-dom';
 
 import {UNSAFE_INIT_DATA} from '../globals';
 import {AccountPage} from '../pages/account-page';
-import {MainPage} from '../pages/main-page';
+import {MainPage} from '../pages/main-page/main-page';
 
 export const TabBarRouter = () => {
     return (

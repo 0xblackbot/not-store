@@ -1,9 +1,10 @@
 import {useEffect} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 
-import {useDispatch} from '../store';
-import {useSelectCatalogue} from '../store/catalogue/selectors';
-import {fetchCatalogue} from '../store/catalogue/thunk';
+import {MainPageHeader} from './header';
+import {useDispatch} from '../../store';
+import {useSelectCatalogue} from '../../store/catalogue/selectors';
+import {fetchCatalogue} from '../../store/catalogue/thunk';
 
 export const MainPage = () => {
     const location = useLocation();
@@ -17,6 +18,7 @@ export const MainPage = () => {
 
     return (
         <>
+            <MainPageHeader />
             <p>Main page</p>
             <p>Main page</p>
             <p>Main page</p>

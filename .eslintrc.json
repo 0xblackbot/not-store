@@ -49,6 +49,10 @@
         "ts": "never",
         "tsx": "never"
       }
+    ],
+    "import/no-unresolved": [
+      "error",
+      { "ignore": ["\\.svg\\?react$"] }
     ]
   }
 }

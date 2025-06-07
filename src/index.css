@@ -31,6 +31,10 @@
         color: var(--c-text-primary);
         background-color: var(--c-bg-bw);
     }
+
+    svg, svg * {
+        fill: currentColor;
+    }
 }
 
 /* ── reusable text styles ─────────────────────────────────── */
