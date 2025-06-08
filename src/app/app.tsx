@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 
+import {BASE_URL} from '../globals';
 import {MainRouter} from '../navigation/main-router';
 import {SuccessOverlayProvider} from '../pages/success-overlay/provider';
 import {useDispatch} from '../store';
@@ -24,7 +25,7 @@ export const App = () => {
 
     return (
         <SuccessOverlayProvider>
-            <BrowserRouter>
+            <BrowserRouter basename={BASE_URL}>
                 <MainRouter />
             </BrowserRouter>
         </SuccessOverlayProvider>
