@@ -9,7 +9,7 @@ export const TabBarButtons = () => {
     const cartTotalPrice = useSelectCartTotalPrice();
 
     return (
-        <div className="h-nav-bar fixed px-5 inset-x-0 bottom-0 z-10 bg-bw">
+        <div className="h-nav-bar fixed px-4 inset-x-0 bottom-0 z-10 bg-bw">
             {cartTotalPrice > 0 ? (
                 <TabPaymentButton cartTotalPrice={cartTotalPrice} />
             ) : (
@@ -34,10 +34,7 @@ export const TabBarButtons = () => {
                             className="h-6 w-6 mt-[5px] mr-2 mb-[3px] ml-2 rounded-full object-cover"
                         />
                         <p className="tab-button-text truncate">
-                            {[
-                                UNSAFE_INIT_DATA.user.first_name,
-                                UNSAFE_INIT_DATA.user.last_name
-                            ].join(' ')}
+                            {UNSAFE_INIT_DATA.user.name}
                         </p>
                     </NavLink>
                 </nav>

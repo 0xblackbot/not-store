@@ -31,12 +31,7 @@ export const AccountPage = () => {
                     src={UNSAFE_INIT_DATA.user.photo_url}
                     className="w-30 h-30 rounded-full object-cover"
                 />
-                <p className="h1-text">
-                    {[
-                        UNSAFE_INIT_DATA.user.first_name,
-                        UNSAFE_INIT_DATA.user.last_name
-                    ].join(' ')}
-                </p>
+                <p className="h1-text">{UNSAFE_INIT_DATA.user.name}</p>
             </div>
 
             <div className="flex flex-1 flex-col overflow-hidden">

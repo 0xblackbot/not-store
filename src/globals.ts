@@ -1,22 +1,17 @@
-// TODO: delete mock
-const USER_MOCK = {
-    id: 151872929,
-    first_name: 'Andrii Ivaniv',
-    last_name: '',
-    username: 'unixvb',
-    language_code: 'en',
-    is_premium: true,
-    allows_write_to_pm: true,
-    photo_url:
-        'https://t.me/i/userpic/320/5P-RxYMc8EFHYlIhQaTdLih_eMg6JlR6jFlzeW3PJc4.svg'
-};
+export const IS_TMA: boolean = !!window.Telegram.WebApp.initData;
+
+const userName = [
+    window.Telegram.WebApp.initDataUnsafe.user?.first_name,
+    window.Telegram.WebApp.initDataUnsafe.user?.last_name
+].join(' ');
 
 export const UNSAFE_INIT_DATA = {
-    // non-null assertion used to silence the type error,
-    // runtime guard still remains via using IS_TMA check
-    user: window.Telegram.WebApp.initDataUnsafe.user! ?? USER_MOCK
+    user: {
+        photo_url:
+            window.Telegram.WebApp.initDataUnsafe.user?.photo_url ??
+            'http://0xblackbot.github.io/not-store/images/default_user.png',
+        name: userName === ' ' ? 'Username' : userName
+    }
 };
-
-export const IS_TMA: boolean = !!UNSAFE_INIT_DATA.user;
 
 export const BASE_URL = import.meta.env.VITE_BASE_URL ?? '/';

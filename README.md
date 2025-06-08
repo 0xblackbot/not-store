@@ -3,6 +3,7 @@
 ## TODO:
 - [ ] Generate sitemap
 - [ ] Add skeletons
-- [ ] Remove user mock
+- [X] Remove user mock
+- [ ] Check is TMA
 - [ ] Set max & min width
 - [ ] handle wallet connected status & payment correctly (useMakePayment)
