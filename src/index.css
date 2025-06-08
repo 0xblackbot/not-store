@@ -36,9 +36,9 @@
         background-color: var(--c-bg-bw);
     }
 
-    svg, svg * {
+    svg:not(.no-current-fill),
+    svg:not(.no-current-fill) * {
         fill: currentColor;
-
     }
 }
 
