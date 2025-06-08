@@ -1,3 +1,5 @@
+import {useTonConnectUI} from '@tonconnect/ui-react';
+
 import {EmptyCart} from './empty-cart';
 import MinusIcon from '../../icons/minus.svg?react';
 import XMarkIcon from '../../icons/x-mark.svg?react';
@@ -12,6 +14,7 @@ import {useBackButton, useNavigateBack} from '../../utils/navigation.utils';
 export const CartSheet = () => {
     const dispatch = useDispatch();
     const navigateBack = useNavigateBack();
+    const [tonConnectUi] = useTonConnectUI();
 
     const cartItems = useSelectCartItems();
     const cartTotalPrice = useSelectCartTotalPrice();
@@ -19,6 +22,9 @@ export const CartSheet = () => {
     useBackButton();
 
     const handleMinusClick = (id: number) => dispatch(removeFromCart(id));
+    const handleBuyClick = () => {
+        tonConnectUi.openModal();
+    };
 
     return (
         <div className="relative">
@@ -68,7 +74,10 @@ export const CartSheet = () => {
                     </div>
 
                     <div className="h-nav-bar box-content pt-2 px-4">
-                        <div className="flex h-12.5 justify-center items-center rounded-[12px] bg-[var(--c-button-bw)]">
+                        <div
+                            className="flex h-12.5 justify-center items-center rounded-[12px] bg-[var(--c-button-bw)]"
+                            onClick={handleBuyClick}
+                        >
                             <p className="big-button-text text-[var(--c-bg-bw)]">
                                 Buy for {cartTotalPrice} NOT
                             </p>

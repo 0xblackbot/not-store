@@ -14,6 +14,7 @@
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/vite": "^4.1.8",
     "@tonconnect/ui": "^2.1.0",
+    "@tonconnect/ui-react": "^2.1.0",
     "axios": "^1.9.0",
     "embla-carousel-react": "^8.6.0",
     "motion": "^12.16.0",
