@@ -1,6 +1,8 @@
 import {useCallback, useEffect} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 
+import {ITEM_PAGE_PREFIX} from '../globals';
+
 export const useNavigateBack = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -23,4 +25,17 @@ export const useBackButton = () => {
             window.Telegram.WebApp.BackButton.offClick(navigateBack);
         };
     }, [navigateBack]);
+};
+
+export const useStartParameters = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const startParam = window.Telegram?.WebApp?.initDataUnsafe?.start_param;
+
+        if (startParam?.startsWith(ITEM_PAGE_PREFIX)) {
+            const id = startParam.replace(ITEM_PAGE_PREFIX, '');
+            navigate(`/item/${id}`);
+        }
+    }, []);
 };

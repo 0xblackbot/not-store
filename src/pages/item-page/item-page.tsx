@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom';
 import {ActionButtons} from './action-buttons';
 import {Tags} from './tags';
 import {Thumbnails} from './thumbnails';
-import {TMA_ITEM_URL} from '../../globals';
+import {ITEM_PAGE_PREFIX, TMA_APP_URL} from '../../globals';
 import ShareIcon from '../../icons/share.svg?react';
 import {
     useSelectCatalogueItem,
@@ -32,7 +32,7 @@ export const ItemPage = () => {
     }
 
     const handleShareClick = () => {
-        const tmaUrl = TMA_ITEM_URL + item.id;
+        const tmaUrl = TMA_APP_URL + '?startapp=' + ITEM_PAGE_PREFIX + item.id;
         const text = `Check out ${item.name} ${item.category}`;
 
         const url = `https://t.me/share/url?url=${tmaUrl}&text=${text}`;

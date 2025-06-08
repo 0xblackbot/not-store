@@ -15,4 +15,6 @@ export const UNSAFE_INIT_DATA = {
 };
 
 export const BASE_URL = import.meta.env.VITE_BASE_URL ?? '/';
-export const TMA_ITEM_URL = 'https://t.me/otStoreBot/app?startapp=itemId_';
+
+export const TMA_APP_URL = 'https://t.me/otStoreBot/app';
+export const ITEM_PAGE_PREFIX = 'itemId_';
