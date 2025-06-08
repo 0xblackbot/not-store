@@ -1,22 +1,22 @@
-import {Routes, Route, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
-import {UNSAFE_INIT_DATA} from '../globals';
-import NotIcon from '../icons/not.svg?react';
-import {AccountPage} from '../pages/account-page/account-page';
-import {MainPage} from '../pages/main-page/main-page';
+import {UNSAFE_INIT_DATA} from '../../globals';
+import NotIcon from '../../icons/not.svg?react';
+import {useSelectCartTotalPrice} from '../../store/cart/selectors';
 
-export const TabBarRouter = () => {
+export const TabBarButtons = () => {
+    const cartTotalPrice = useSelectCartTotalPrice();
+
     return (
-        <div className="flex flex-col min-h-screen pt-inset-top">
-            <div className="flex flex-1 flex-col overflow-y-auto pb-nav-bar">
-                <Routes>
-                    <Route index element={<MainPage />} />
-                    <Route path="account" element={<AccountPage />} />
-                    <Route path="*" element={<MainPage />} />
-                </Routes>
-            </div>
-            <div className="h-nav-bar fixed inset-x-0 bottom-0 z-10 bg-bw">
-                <nav className="grid grid-cols-2 pl-5 pr-5">
+        <div className="h-nav-bar fixed px-5 inset-x-0 bottom-0 z-10 bg-bw">
+            {cartTotalPrice > 0 ? (
+                <div className="flex h-12.5 mt-2 justify-center items-center rounded-[12px] bg-[var(--c-button-bw)]">
+                    <p className="big-button-text text-[var(--c-bg-bw)]">
+                        Buy for {cartTotalPrice} NOT
+                    </p>
+                </div>
+            ) : (
+                <nav className="grid grid-cols-2">
                     <NavLink
                         to="/"
                         className={({isActive}) =>
@@ -44,7 +44,7 @@ export const TabBarRouter = () => {
                         </p>
                     </NavLink>
                 </nav>
-            </div>
+            )}
         </div>
     );
 };

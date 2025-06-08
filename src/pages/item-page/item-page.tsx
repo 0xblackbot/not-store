@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
+import {ActionButtons} from './action-buttons';
 import {Tags} from './tags';
 import {Thumbnails} from './thumbnails';
 import ShareIcon from '../../icons/share.svg?react';
@@ -41,16 +42,7 @@ export const ItemPage = () => {
 
             <Thumbnails images={item.images} />
 
-            <div className="grid grid-cols-2 gap-3 h-nav-bar box-content pt-2 px-4">
-                <div className="flex h-12.5 justify-center items-center rounded-[12px] bg-[var(--c-button-additional)]">
-                    <p className="big-button-text">Add to cart</p>
-                </div>
-                <div className="flex h-12.5 justify-center items-center rounded-[12px] bg-[var(--c-button-bw)]">
-                    <p className="big-button-text text-[var(--c-bg-bw)]">
-                        Buy now
-                    </p>
-                </div>
-            </div>
+            <ActionButtons item={item} />
         </>
     );
 };

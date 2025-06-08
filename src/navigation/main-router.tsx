@@ -3,7 +3,7 @@ import {Route, Routes, useLocation} from 'react-router-dom';
 
 import {CartSheetMotion} from './cart-sheet-motion';
 import {ItemPageMotion} from './item-page-motion';
-import {TabBarRouter} from './tab-bar-router';
+import {TabBarRouter} from './tab-bar-router/tab-bar-router';
 
 export const MainRouter = () => {
     const location = useLocation();
