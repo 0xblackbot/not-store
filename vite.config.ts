@@ -1,5 +1,6 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import {visualizer} from 'rollup-plugin-visualizer';
 import {defineConfig} from 'vite';
 import mkcert from 'vite-plugin-mkcert';
 import svgr from 'vite-plugin-svgr';
@@ -13,7 +14,8 @@ export default defineConfig({
         mkcert({force: true}),
         Terminal(),
         tailwindcss(),
-        svgr()
+        svgr(),
+        visualizer({open: true})
     ],
     build: {
         minify: 'terser'

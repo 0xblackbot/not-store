@@ -59,7 +59,7 @@ export const MainPageHeader: FC<Props> = ({searchValue, setSearchValue}) => {
                     <div className="relative flex flex-1">
                         <input
                             ref={inputRef}
-                            className="flex flex-1 h-9 pl-9 rounded-[10px] bg-[var(--c-button-additional)]"
+                            className="flex flex-1 h-9 pl-9 rounded-[10px] bg-[var(--c-button-additional)] outline-none ring-0 border-none focus:outline-none focus:ring-0 focus:border-none shadow-none"
                             placeholder="Search"
                             value={searchValue}
                             onChange={handleInputChange}
