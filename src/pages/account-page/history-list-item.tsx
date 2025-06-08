@@ -26,6 +26,7 @@ export const HistoryListItem: FC<
         >
             <img
                 src={item.data.images[0]}
+                alt={item.data.name}
                 className="w-15 aspect-square object-cover rounded-[12px]"
             />
             <div className="flex flex-1 justify-between items-center truncate">

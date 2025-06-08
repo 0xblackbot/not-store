@@ -9,7 +9,7 @@ export const UNSAFE_INIT_DATA = {
     user: {
         photo_url:
             window.Telegram.WebApp.initDataUnsafe.user?.photo_url ??
-            'http://0xblackbot.github.io/not-store/images/default_user.png',
+            'https://0xblackbot.github.io/not-store/images/default_user.png',
         name: userName === ' ' ? 'Username' : userName
     }
 };

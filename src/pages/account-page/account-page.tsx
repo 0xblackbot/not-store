@@ -29,6 +29,7 @@ export const AccountPage = () => {
             <div className="flex flex-col gap-2 items-center">
                 <img
                     src={UNSAFE_INIT_DATA.user.photo_url}
+                    alt={UNSAFE_INIT_DATA.user.name}
                     className="w-30 h-30 rounded-full object-cover"
                 />
                 <p className="h1-text">{UNSAFE_INIT_DATA.user.name}</p>

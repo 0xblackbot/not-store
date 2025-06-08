@@ -31,6 +31,7 @@ export const TabBarButtons = () => {
                     >
                         <img
                             src={UNSAFE_INIT_DATA.user.photo_url}
+                            alt={UNSAFE_INIT_DATA.user.name}
                             className="h-6 w-6 mt-[5px] mr-2 mb-[3px] ml-2 rounded-full object-cover"
                         />
                         <p className="tab-button-text truncate">

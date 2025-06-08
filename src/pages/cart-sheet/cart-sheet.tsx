@@ -44,6 +44,7 @@ export const CartSheet = () => {
                             >
                                 <img
                                     src={item.image}
+                                    alt={item.name}
                                     className="w-15 aspect-square object-cover rounded-[12px]"
                                 />
                                 <div className="flex flex-1 justify-between items-center">

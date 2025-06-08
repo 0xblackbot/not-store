@@ -46,6 +46,7 @@ export const Thumbnails: FC<Props> = ({images}) => {
                         <img
                             key={index}
                             src={image}
+                            alt="Product"
                             className="w-full h-full object-cover rounded-[20px] transform-gpu flex-[0_0_100%] min-w-0"
                         />
                     ))}
@@ -62,6 +63,7 @@ export const Thumbnails: FC<Props> = ({images}) => {
                         <img
                             key={index}
                             src={image}
+                            alt="Product"
                             className={`h-25 w-25 shrink-0 rounded-[16px] object-cover ${
                                 index === selectedIndex &&
                                 'border border-[var(--c-button-bw)]'

@@ -30,6 +30,7 @@ export const ImagesCarousel: FC<Props> = ({images}) => {
                         <img
                             key={index}
                             src={image}
+                            alt="Product"
                             className="w-full aspect-square object-cover"
                         />
                     ))}
