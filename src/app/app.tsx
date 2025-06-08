@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 
 import {MainRouter} from '../navigation/main-router';
+import {SuccessOverlayProvider} from '../pages/success-overlay/provider';
 import {useDispatch} from '../store';
 import {fetchCatalogue} from '../store/catalogue/thunk';
 import {fetchHistory} from '../store/history/thunk';
@@ -22,8 +23,10 @@ export const App = () => {
     }, []);
 
     return (
-        <BrowserRouter>
-            <MainRouter />
-        </BrowserRouter>
+        <SuccessOverlayProvider>
+            <BrowserRouter>
+                <MainRouter />
+            </BrowserRouter>
+        </SuccessOverlayProvider>
     );
 };

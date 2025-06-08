@@ -18,3 +18,5 @@ export const UNSAFE_INIT_DATA = {
 };
 
 export const IS_TMA: boolean = !!UNSAFE_INIT_DATA.user;
+
+export const BASE_URL = import.meta.env.VITE_BASE_URL ?? '/';

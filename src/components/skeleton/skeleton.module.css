@@ -1,0 +1,20 @@
+.skeleton_loading {
+    background: linear-gradient(90deg, var(--c-button-additional) 25%, var(--c-bg-bw) 50%, var(--c-button-additional) 75%);
+    border-radius: 999999px;
+    background-size: 200% 100%;
+    animation: skeleton-loading 3s infinite;
+}
+
+.skeleton_loading * {
+    opacity: 0;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
