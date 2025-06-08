@@ -1,12 +1,17 @@
 import {useMemo, useState} from 'react';
 
 import {CatalogueListItem} from './catalogue-list-item';
+import {CatalogueSkeleton} from './catalogue-skeleton';
 import {MainPageHeader} from './header';
 import NotFoundIcon from '../../icons/not-found.svg?react';
-import {useSelectCatalogue} from '../../store/catalogue/selectors';
+import {
+    useSelectCatalogue,
+    useSelectCatalogueLoading
+} from '../../store/catalogue/selectors';
 import {searchCatalogue} from '../../utils/search.utils';
 
 export const MainPage = () => {
+    const isLoading = useSelectCatalogueLoading();
     const catalogue = useSelectCatalogue();
     const [searchValue, setSearchValue] = useState('');
 
@@ -22,7 +27,9 @@ export const MainPage = () => {
                 setSearchValue={setSearchValue}
             />
 
-            {filteredCatalogue.length === 0 ? (
+            {isLoading ? (
+                <CatalogueSkeleton />
+            ) : filteredCatalogue.length === 0 ? (
                 <div className="flex flex-1 flex-col gap-2 mt-20 items-center">
                     <NotFoundIcon className="no-current-fill" />
                     <p className="h1-text">Not Found</p>

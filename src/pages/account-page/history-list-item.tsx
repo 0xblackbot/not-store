@@ -2,6 +2,7 @@ import {FC} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {ListChildComponentProps} from 'react-window';
 
+import {Skeleton} from '../../components/skeleton/skeleton';
 import {HistoryDisplayItem} from '../../interfaces/history-item';
 
 export interface HistoryListItemProps {
@@ -13,6 +14,21 @@ export const HistoryListItem: FC<
     ListChildComponentProps<HistoryListItemProps>
 > = ({index, style, data}) => {
     const location = useLocation();
+
+    if (data.isLoading) {
+        return (
+            <div style={style} className="flex gap-3 py-2 px-4">
+                <Skeleton
+                    isLoading={true}
+                    className="w-15 aspect-square !rounded-[12px]"
+                />
+                <Skeleton
+                    isLoading={true}
+                    className="w-full !rounded-[12px]"
+                ></Skeleton>
+            </div>
+        );
+    }
 
     const item = data.dataArray[index];
 

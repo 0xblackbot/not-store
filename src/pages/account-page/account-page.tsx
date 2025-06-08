@@ -1,30 +1,40 @@
 import {useMemo} from 'react';
 import {FixedSizeList} from 'react-window';
 
-import {HistoryListItem, HistoryListItemProps} from './history-list-item';
+import {HistoryListItem} from './history-list-item';
 import {UNSAFE_INIT_DATA} from '../../globals';
-import {useSelectHistory} from '../../store/history/selectors';
+import {useSelectCatalogueLoading} from '../../store/catalogue/selectors';
+import {
+    useSelectHistory,
+    useSelectHistoryLoading
+} from '../../store/history/selectors';
 import {useDivHeight} from '../../utils/div-height.utils';
 
 const ITEM_SIZE = 68 + 8;
 
 export const AccountPage = () => {
     const divHeight = useDivHeight();
+
+    const isCatalogueLoading = useSelectCatalogueLoading();
+    const isHistoryLoading = useSelectHistoryLoading();
     const history = useSelectHistory();
 
-    const historyListProps = useMemo<HistoryListItemProps>(
-        () => ({
-            isLoading: false,
-            dataArray: history
-        }),
-        [history]
-    );
+    const data = useMemo(() => {
+        const isLoading = isCatalogueLoading || isHistoryLoading;
+        const isListEmpty = !isLoading && history.length === 0;
+        const itemCount = isLoading ? 15 : history.length;
 
-    const isEmpty = historyListProps.dataArray.length === 0;
+        return {
+            isLoading,
+            isListEmpty,
+            itemCount,
+            dataArray: history
+        };
+    }, [isCatalogueLoading, isHistoryLoading, history]);
 
     return (
         <div
-            className={`flex flex-1 flex-col gap-8 pt-10 min-h-0 ${!isEmpty && 'touch-none'}`}
+            className={`flex flex-1 flex-col gap-8 pt-10 min-h-0 ${!data.isListEmpty && 'touch-none'}`}
         >
             <div className="flex flex-col gap-2 items-center">
                 <img
@@ -36,7 +46,7 @@ export const AccountPage = () => {
             </div>
 
             <div className="flex flex-1 flex-col overflow-hidden">
-                {isEmpty ? (
+                {data.isListEmpty ? (
                     <div className="flex flex-1 flex-col gap-2 pr-4 pb-5 pl-4 items-center justify-center">
                         <p className="h1-text">No history yet</p>
                         <p className="body-text opacity-50">
@@ -55,8 +65,8 @@ export const AccountPage = () => {
                         >
                             <FixedSizeList
                                 itemSize={ITEM_SIZE}
-                                itemData={historyListProps}
-                                itemCount={historyListProps.dataArray.length}
+                                itemData={data}
+                                itemCount={data.itemCount}
                                 width="100%"
                                 height={divHeight.height}
                             >

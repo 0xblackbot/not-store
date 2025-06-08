@@ -2,7 +2,7 @@
 
 ## TODO:
 - [ ] Generate sitemap
-- [ ] Add skeletons
+- [X] Add skeletons
 - [X] Remove user mock
 - [ ] Check is TMA
 - [ ] Set max & min width
