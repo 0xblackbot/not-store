@@ -47,6 +47,7 @@ export const Thumbnails: FC<Props> = ({images}) => {
                             key={index}
                             src={image}
                             alt="Product"
+                            loading={index === 0 ? 'eager' : 'lazy'}
                             className="w-full h-full object-cover rounded-[20px] transform-gpu flex-[0_0_100%] min-w-0"
                         />
                     ))}
@@ -64,6 +65,7 @@ export const Thumbnails: FC<Props> = ({images}) => {
                             key={index}
                             src={image}
                             alt="Product"
+                            loading="lazy"
                             className={`h-25 w-25 shrink-0 rounded-[16px] object-cover ${
                                 index === selectedIndex &&
                                 'border border-[var(--c-button-bw)]'

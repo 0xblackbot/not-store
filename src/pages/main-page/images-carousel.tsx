@@ -31,6 +31,7 @@ export const ImagesCarousel: FC<Props> = ({images}) => {
                             key={index}
                             src={image}
                             alt="Product"
+                            loading={index === 0 ? 'eager' : 'lazy'}
                             className="w-full aspect-square object-cover"
                         />
                     ))}
