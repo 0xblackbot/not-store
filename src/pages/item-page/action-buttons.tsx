@@ -18,7 +18,7 @@ export const ActionButtons: FC<Props> = ({item}) => {
 
     const handleAddToCart = () => dispatch(addToCart(item));
     const handleRemoveFromCart = () => dispatch(removeFromCart(item.id));
-    const handleBuyClick = () => makePayment(item.price);
+    const handleBuyClick = () => makePayment(item.price, false);
 
     return (
         <div className="grid grid-cols-2 gap-3 h-nav-bar box-content pt-2 px-4">

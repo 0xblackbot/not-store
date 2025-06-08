@@ -9,7 +9,7 @@ interface Props {
 export const CartPaymentButton: FC<Props> = ({cartTotalPrice}) => {
     const makePayment = useMakePayment();
 
-    const handleBuyClick = () => makePayment(cartTotalPrice);
+    const handleBuyClick = () => makePayment(cartTotalPrice, true);
 
     return (
         <div

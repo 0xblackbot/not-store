@@ -10,6 +10,8 @@ export const cartSlice = createSlice({
     } as CartState,
     reducers: {
         addToCart: (state, action: PayloadAction<CatalogueItem>) => {
+            window.Telegram.WebApp.HapticFeedback.impactOccurred('medium');
+
             const catalogueItem = action.payload;
             const existing = state.record[catalogueItem.id];
 
@@ -28,6 +30,8 @@ export const cartSlice = createSlice({
             }
         },
         removeFromCart: (state, action: PayloadAction<number>) => {
+            window.Telegram.WebApp.HapticFeedback.impactOccurred('medium');
+
             const id = action.payload;
             const existing = state.record[id];
 

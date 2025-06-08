@@ -11,7 +11,7 @@ export const useMakePayment = () => {
     const successOverlay = useSuccessOverlay();
 
     return useCallback(
-        async (notAmount: number) => {
+        async (notAmount: number, shouldClearCard: boolean) => {
             console.log(`${notAmount} NOT payment request`);
 
             try {
@@ -21,8 +21,14 @@ export const useMakePayment = () => {
             }
 
             await tonConnectUi.openModal().then(() => {
+                window.Telegram.WebApp.HapticFeedback.notificationOccurred(
+                    'success'
+                );
                 successOverlay.show();
-                dispatch(clearCart());
+
+                if (shouldClearCard) {
+                    dispatch(clearCart());
+                }
             });
         },
         [tonConnectUi, successOverlay.show]
