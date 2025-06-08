@@ -6,17 +6,17 @@ import {CatalogueItem} from '../../interfaces/catalogue-item';
 export const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        items: {}
+        record: {}
     } as CartState,
     reducers: {
         addToCart: (state, action: PayloadAction<CatalogueItem>) => {
             const catalogueItem = action.payload;
-            const existing = state.items[catalogueItem.id];
+            const existing = state.record[catalogueItem.id];
 
             if (existing) {
                 existing.amount += 1;
             } else {
-                state.items[catalogueItem.id] = {
+                state.record[catalogueItem.id] = {
                     amount: 1,
                     id: catalogueItem.id,
                     image: catalogueItem.images[0],
@@ -29,15 +29,18 @@ export const cartSlice = createSlice({
         },
         removeFromCart: (state, action: PayloadAction<number>) => {
             const id = action.payload;
-            const existing = state.items[id];
+            const existing = state.record[id];
 
             if (!existing) return;
 
             if (existing.amount > 1) {
                 existing.amount -= 1;
             } else {
-                delete state.items[id];
+                delete state.record[id];
             }
+        },
+        clearCart: state => {
+            state.record = {};
         }
     }
 });

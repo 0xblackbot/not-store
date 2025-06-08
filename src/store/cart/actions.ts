@@ -1,3 +1,3 @@
 import {cartSlice} from './slice';
 
-export const {addToCart, removeFromCart} = cartSlice.actions;
+export const {addToCart, removeFromCart, clearCart} = cartSlice.actions;
