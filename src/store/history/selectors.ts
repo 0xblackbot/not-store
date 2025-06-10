@@ -1,5 +1,5 @@
 import {HistoryDisplayItem} from '@interfaces/history-item';
-import {createSelector, useSelector} from '@store/store.ts';
+import {createSelector, useSelector} from '@store/store';
 import {formatDate} from '@utils/format.utils';
 
 export const useSelectHistoryLoading = () =>

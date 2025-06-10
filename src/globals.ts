@@ -18,3 +18,6 @@ export const BASE_URL = import.meta.env.VITE_BASE_URL ?? '/';
 
 export const TMA_APP_URL = 'https://t.me/otStoreBot/app';
 export const ITEM_PAGE_PREFIX = 'itemId_';
+
+export const PAYMENT_RECEIVER_ADDRESS =
+    'UQCIOI01FJKvUHqUNF-c1BGytouH5HdeOPHCgyk2ddK1Y8oZ';

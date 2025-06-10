@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 
-import {persistor, store} from '@store/store.ts';
+import {persistor, store} from '@store/store';
 
 import {App} from './app/app';
 

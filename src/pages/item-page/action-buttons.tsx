@@ -2,8 +2,11 @@ import {FC} from 'react';
 
 import {CatalogueItem} from '@interfaces/catalogue-item';
 import {addToCart, removeFromCart} from '@store/cart/actions';
-import {useSelectCartItem} from '@store/cart/selectors';
-import {useDispatch} from '@store/store.ts';
+import {
+    useSelectCartItem,
+    useSelectCartTotalPrice
+} from '@store/cart/selectors';
+import {useDispatch} from '@store/store';
 import {useMakePayment} from '@utils/payment.utils';
 
 interface Props {
@@ -15,10 +18,17 @@ export const ActionButtons: FC<Props> = ({item}) => {
     const makePayment = useMakePayment();
 
     const cartItem = useSelectCartItem(item.id);
+    const cartTotalPrice = useSelectCartTotalPrice();
 
     const handleAddToCart = () => dispatch(addToCart(item));
     const handleRemoveFromCart = () => dispatch(removeFromCart(item.id));
-    const handleBuyClick = () => makePayment(item.price, false);
+    const handleBuyClick = () => {
+        if (cartTotalPrice === 0) {
+            return makePayment(item.price, false);
+        } else {
+            return makePayment(cartTotalPrice, true);
+        }
+    };
 
     return (
         <div className="grid grid-cols-2 gap-3 h-nav-bar box-content pt-2 px-4">

@@ -18,10 +18,11 @@ Not Store is a sleek Telegram Mini App built for the [Notcoin Frontend Contest](
 
 ## TODO:
 
+- [ ] Send NOT in payment request (rn small TON amount is sent for testing purposes)
 - [ ] Generate sitemap  
-- [X] Add skeletons  
-- [X] Remove user mock  
 - [ ] Check if running inside TMA  
 - [ ] Set max & min width  
+- [X] Add skeletons  
+- [X] Remove user mock  
 - [X] Handle `itemId_` start parameter  
-- [ ] Handle wallet connected status & payment correctly (`useMakePayment`)
+- [X] Handle wallet connected status & payment correctly (`useMakePayment`)

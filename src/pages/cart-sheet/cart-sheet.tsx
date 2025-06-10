@@ -5,7 +5,7 @@ import {
     useSelectCartItems,
     useSelectCartTotalPrice
 } from '@store/cart/selectors';
-import {useDispatch} from '@store/store.ts';
+import {useDispatch} from '@store/store';
 import {useBackButton, useNavigateBack} from '@utils/navigation.utils';
 
 import {CartPaymentButton} from './cart-payment-button';

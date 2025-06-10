@@ -6,7 +6,7 @@ import {MainRouter} from '@navigation/main-router';
 import {SuccessOverlayProvider} from '@pages/success-overlay/provider';
 import {fetchCatalogue} from '@store/catalogue/thunk';
 import {fetchHistory} from '@store/history/thunk';
-import {useDispatch} from '@store/store.ts';
+import {useDispatch} from '@store/store';
 import {useThemeStyles} from '@utils/theme.utils';
 import {requestFullscreen} from '@utils/web-app.utils';
 
