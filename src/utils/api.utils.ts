@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import {CatalogueItem} from '../interfaces/catalogue-item';
-import {HistoryItem} from '../interfaces/history-item';
+import {CatalogueItem} from '@interfaces/catalogue-item';
+import {HistoryItem} from '@interfaces/history-item';
 
 const api = axios.create({
     baseURL: 'https://not-contest-cdn.openbuilders.xyz/api/'

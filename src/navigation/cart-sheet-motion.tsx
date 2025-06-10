@@ -1,7 +1,7 @@
 import {animate, motion, useMotionValue} from 'motion/react';
 
-import {CartSheet} from '../pages/cart-sheet/cart-sheet';
-import {useNavigateBack} from '../utils/navigation.utils';
+import {CartSheet} from '@pages/cart-sheet/cart-sheet';
+import {useNavigateBack} from '@utils/navigation.utils';
 
 export const CartSheetMotion = () => {
     const navigateBack = useNavigateBack();

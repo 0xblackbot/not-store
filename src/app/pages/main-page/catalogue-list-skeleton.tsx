@@ -1,5 +1,6 @@
+import {CatalogueItem} from '@interfaces/catalogue-item';
+
 import {CatalogueListItem} from './catalogue-list-item';
-import {CatalogueItem} from '../../interfaces/catalogue-item';
 
 const catalogueItemMock: CatalogueItem = {
     id: 0,

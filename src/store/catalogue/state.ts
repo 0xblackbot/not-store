@@ -1,4 +1,4 @@
-import {CatalogueItem, CatalogueRecord} from '../../interfaces/catalogue-item';
+import {CatalogueItem, CatalogueRecord} from '@interfaces/catalogue-item';
 
 export interface CatalogueState {
     data: CatalogueItem[];

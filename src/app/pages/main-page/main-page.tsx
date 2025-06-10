@@ -1,9 +1,10 @@
 import {memo, useMemo, useState} from 'react';
 
+import {useSelectCatalogue} from '@store/catalogue/selectors';
+import {searchCatalogue} from '@utils/search.utils';
+
 import {CatalogueList} from './catalogue-list';
 import {MainPageHeader} from './header';
-import {useSelectCatalogue} from '../../store/catalogue/selectors';
-import {searchCatalogue} from '../../utils/search.utils';
 
 export const MainPage = memo(() => {
     const catalogue = useSelectCatalogue();

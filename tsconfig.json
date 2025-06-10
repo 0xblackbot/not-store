@@ -13,6 +13,16 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "paths": {
+      "@globals": ["./src/globals.ts"],
+      "@pages/*": ["./src/app/pages/*"],
+      "@icons/*": ["./src/icons/*"],
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@shared-components/*": ["./src/shared-components/*"],
+      "@store/*": ["./src/store/*"],
+      "@utils/*": ["./src/utils/*"],
+    },
 
     /* Linting */
     "strict": true,

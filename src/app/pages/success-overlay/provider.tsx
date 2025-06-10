@@ -1,8 +1,9 @@
 import {AnimatePresence, motion} from 'motion/react';
 import {FC, PropsWithChildren, useMemo, useState} from 'react';
 
+import {LottieWithSuspense} from '@shared-components/lottie/lottie-with-suspense';
+
 import {SuccessOverlayContext} from './context';
-import {LottieWithSuspense} from '../../components/lottie/lottie-with-suspense';
 
 export const SuccessOverlayProvider: FC<PropsWithChildren> = ({children}) => {
     const [visible, setVisible] = useState(false);

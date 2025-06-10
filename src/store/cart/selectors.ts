@@ -1,5 +1,6 @@
-import {CartItem} from '../../interfaces/cart-item';
-import {createSelector, useSelector} from '../index';
+import {CartItem} from '@interfaces/cart-item';
+
+import {createSelector, useSelector} from '../store';
 
 export const useSelectCartItems = () =>
     useSelector(

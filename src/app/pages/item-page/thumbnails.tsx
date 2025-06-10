@@ -1,7 +1,7 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import {FC, useCallback, useEffect, useState} from 'react';
 
-import {ImgSkeleton} from '../../components/img-skeleton/img-skeleton';
+import {ImgSkeleton} from '@shared-components/img-skeleton/img-skeleton';
 
 interface Props {
     images: string[];

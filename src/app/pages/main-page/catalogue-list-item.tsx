@@ -1,11 +1,12 @@
 import {FC} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 
+import CheckMarkIcon from '@icons/check-mark.svg?react';
+import {CatalogueItem} from '@interfaces/catalogue-item';
+import {Skeleton} from '@shared-components/skeleton/skeleton';
+import {useSelectCartItemExist} from '@store/cart/selectors';
+
 import {ImagesCarousel} from './images-carousel';
-import {Skeleton} from '../../components/skeleton/skeleton';
-import CheckMarkIcon from '../../icons/check-mark.svg?react';
-import {CatalogueItem} from '../../interfaces/catalogue-item';
-import {useSelectCartItemExist} from '../../store/cart/selectors';
 
 interface Props {
     item: CatalogueItem;

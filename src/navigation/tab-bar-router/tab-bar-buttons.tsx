@@ -1,9 +1,10 @@
 import {NavLink} from 'react-router-dom';
 
+import {UNSAFE_INIT_DATA} from '@globals';
+import NotIcon from '@icons/not.svg?react';
+import {useSelectCartTotalPrice} from '@store/cart/selectors';
+
 import {TabPaymentButton} from './tab-payment-button';
-import {UNSAFE_INIT_DATA} from '../../globals';
-import NotIcon from '../../icons/not.svg?react';
-import {useSelectCartTotalPrice} from '../../store/cart/selectors';
 
 export const TabBarButtons = () => {
     const cartTotalPrice = useSelectCartTotalPrice();

@@ -1,6 +1,6 @@
-import {HistoryDisplayItem} from '../../interfaces/history-item';
-import {formatDate} from '../../utils/format.utils';
-import {createSelector, useSelector} from '../index';
+import {HistoryDisplayItem} from '@interfaces/history-item';
+import {createSelector, useSelector} from '@store/store.ts';
+import {formatDate} from '@utils/format.utils';
 
 export const useSelectHistoryLoading = () =>
     useSelector(state => state.history.isLoading);

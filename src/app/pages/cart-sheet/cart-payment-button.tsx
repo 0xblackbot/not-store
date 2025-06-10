@@ -1,6 +1,6 @@
 import {FC} from 'react';
 
-import {useMakePayment} from '../../utils/payment.utils';
+import {useMakePayment} from '@utils/payment.utils';
 
 interface Props {
     cartTotalPrice: number;

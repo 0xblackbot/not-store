@@ -9,10 +9,10 @@ import {
 } from 'react';
 import {useNavigate} from 'react-router-dom';
 
-import CartIcon from '../../icons/cart.svg?react';
-import DeleteIcon from '../../icons/delete.svg?react';
-import SearchIcon from '../../icons/search.svg?react';
-import {useSelectCartTotalAmount} from '../../store/cart/selectors';
+import CartIcon from '@icons/cart.svg?react';
+import DeleteIcon from '@icons/delete.svg?react';
+import SearchIcon from '@icons/search.svg?react';
+import {useSelectCartTotalAmount} from '@store/cart/selectors';
 
 interface Props {
     searchValue: string;

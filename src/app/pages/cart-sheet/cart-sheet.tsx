@@ -1,14 +1,15 @@
-import {CartPaymentButton} from './cart-payment-button';
-import {EmptyCart} from './empty-cart';
-import MinusIcon from '../../icons/minus.svg?react';
-import XMarkIcon from '../../icons/x-mark.svg?react';
-import {useDispatch} from '../../store';
-import {removeFromCart} from '../../store/cart/actions';
+import MinusIcon from '@icons/minus.svg?react';
+import XMarkIcon from '@icons/x-mark.svg?react';
+import {removeFromCart} from '@store/cart/actions';
 import {
     useSelectCartItems,
     useSelectCartTotalPrice
-} from '../../store/cart/selectors';
-import {useBackButton, useNavigateBack} from '../../utils/navigation.utils';
+} from '@store/cart/selectors';
+import {useDispatch} from '@store/store.ts';
+import {useBackButton, useNavigateBack} from '@utils/navigation.utils';
+
+import {CartPaymentButton} from './cart-payment-button';
+import {EmptyCart} from './empty-cart';
 
 export const CartSheet = () => {
     const dispatch = useDispatch();

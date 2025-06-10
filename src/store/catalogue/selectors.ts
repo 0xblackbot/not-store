@@ -1,5 +1,6 @@
-import {CatalogueItem} from '../../interfaces/catalogue-item';
-import {useSelector} from '../index';
+import {CatalogueItem} from '@interfaces/catalogue-item';
+
+import {useSelector} from '../store';
 
 export const useSelectCatalogueLoading = () =>
     useSelector(state => state.catalogue.isLoading);

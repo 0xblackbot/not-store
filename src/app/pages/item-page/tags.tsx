@@ -1,6 +1,6 @@
 import {FC, useMemo} from 'react';
 
-import {CatalogueItem} from '../../interfaces/catalogue-item';
+import {CatalogueItem} from '@interfaces/catalogue-item';
 
 interface Props {
     item: CatalogueItem;

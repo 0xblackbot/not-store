@@ -1,10 +1,11 @@
 import {AnimatePresence} from 'motion/react';
 import {Route, Routes, useLocation} from 'react-router-dom';
 
+import {useStartParameters} from '@utils/navigation.utils';
+
 import {CartSheetMotion} from './cart-sheet-motion';
 import {ItemPageMotion} from './item-page-motion';
 import {TabBarRouter} from './tab-bar-router/tab-bar-router';
-import {useStartParameters} from '../utils/navigation.utils';
 
 export const MainRouter = () => {
     const location = useLocation();

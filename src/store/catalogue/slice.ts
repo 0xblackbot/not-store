@@ -1,8 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+import {CatalogueRecord} from '@interfaces/catalogue-item';
+
 import {CatalogueState} from './state';
 import {fetchCatalogue} from './thunk';
-import {CatalogueRecord} from '../../interfaces/catalogue-item';
 
 export const catalogueSlice = createSlice({
     name: 'catalogue',

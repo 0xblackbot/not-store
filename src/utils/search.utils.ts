@@ -1,4 +1,4 @@
-import {CatalogueItem} from '../interfaces/catalogue-item';
+import {CatalogueItem} from '@interfaces/catalogue-item';
 
 export const searchCatalogue = (
     catalogue: CatalogueItem[],

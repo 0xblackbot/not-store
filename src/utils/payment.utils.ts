@@ -1,9 +1,9 @@
 import {useTonConnectUI} from '@tonconnect/ui-react';
 import {useCallback} from 'react';
 
-import {useSuccessOverlay} from '../pages/success-overlay/hook';
-import {useDispatch} from '../store';
-import {clearCart} from '../store/cart/actions';
+import {useSuccessOverlay} from '@pages/success-overlay/hook';
+import {clearCart} from '@store/cart/actions';
+import {useDispatch} from '@store/store.ts';
 
 export const useMakePayment = () => {
     const dispatch = useDispatch();

@@ -1,10 +1,10 @@
 import {FC} from 'react';
 
-import {CatalogueItem} from '../../interfaces/catalogue-item';
-import {useDispatch} from '../../store';
-import {addToCart, removeFromCart} from '../../store/cart/actions';
-import {useSelectCartItem} from '../../store/cart/selectors';
-import {useMakePayment} from '../../utils/payment.utils';
+import {CatalogueItem} from '@interfaces/catalogue-item';
+import {addToCart, removeFromCart} from '@store/cart/actions';
+import {useSelectCartItem} from '@store/cart/selectors';
+import {useDispatch} from '@store/store.ts';
+import {useMakePayment} from '@utils/payment.utils';
 
 interface Props {
     item: CatalogueItem;

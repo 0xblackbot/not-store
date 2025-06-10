@@ -1,4 +1,4 @@
-import {HistoryItem} from '../../interfaces/history-item';
+import {HistoryItem} from '@interfaces/history-item';
 
 export interface HistoryState {
     data: HistoryItem[];

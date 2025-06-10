@@ -1,16 +1,17 @@
 import {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
-import {ActionButtons} from './action-buttons';
-import {Tags} from './tags';
-import {Thumbnails} from './thumbnails';
-import {ITEM_PAGE_PREFIX, TMA_APP_URL} from '../../globals';
-import ShareIcon from '../../icons/share.svg?react';
+import {ITEM_PAGE_PREFIX, TMA_APP_URL} from '@globals';
+import ShareIcon from '@icons/share.svg?react';
 import {
     useSelectCatalogueItem,
     useSelectCatalogueLoading
-} from '../../store/catalogue/selectors';
-import {useBackButton, useNavigateBack} from '../../utils/navigation.utils';
+} from '@store/catalogue/selectors';
+import {useBackButton, useNavigateBack} from '@utils/navigation.utils';
+
+import {ActionButtons} from './action-buttons';
+import {Tags} from './tags';
+import {Thumbnails} from './thumbnails';
 
 export const ItemPage = () => {
     const params = useParams();

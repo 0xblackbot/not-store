@@ -1,7 +1,7 @@
 import {useCallback, useEffect} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 
-import {ITEM_PAGE_PREFIX} from '../globals';
+import {ITEM_PAGE_PREFIX} from '@globals';
 
 export const useNavigateBack = () => {
     const location = useLocation();

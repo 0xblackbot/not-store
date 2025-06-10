@@ -1,10 +1,11 @@
 import {FC} from 'react';
 
+import NotFoundIcon from '@icons/not-found.svg?react';
+import {CatalogueItem} from '@interfaces/catalogue-item';
+import {useSelectCatalogueLoading} from '@store/catalogue/selectors';
+
 import {CatalogueListItem} from './catalogue-list-item';
 import {CatalogueListSkeleton} from './catalogue-list-skeleton';
-import NotFoundIcon from '../../icons/not-found.svg?react';
-import {CatalogueItem} from '../../interfaces/catalogue-item';
-import {useSelectCatalogueLoading} from '../../store/catalogue/selectors';
 
 interface Props {
     filteredCatalogue: CatalogueItem[];

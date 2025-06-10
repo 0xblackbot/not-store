@@ -1,8 +1,9 @@
 import {Route, Routes} from 'react-router-dom';
 
+import {AccountPage} from '@pages/account-page/account-page';
+import {MainPage} from '@pages/main-page/main-page';
+
 import {TabBarButtons} from './tab-bar-buttons';
-import {AccountPage} from '../../pages/account-page/account-page';
-import {MainPage} from '../../pages/main-page/main-page';
 
 export const TabBarRouter = () => {
     return (

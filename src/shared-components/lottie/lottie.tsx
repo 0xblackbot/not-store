@@ -1,8 +1,9 @@
 import {DotLottieReact, DotLottie} from '@lottiefiles/dotlottie-react';
 import {FC, useEffect, useState} from 'react';
 
+import {BASE_URL} from '@globals';
+
 import {LottieProps} from './lottie.props';
-import {BASE_URL} from '../../globals';
 import {Skeleton} from '../skeleton/skeleton';
 
 const Lottie: FC<LottieProps> = ({src, speed, className}) => {

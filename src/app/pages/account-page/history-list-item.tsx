@@ -2,9 +2,9 @@ import {FC} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {ListChildComponentProps} from 'react-window';
 
-import {ImgSkeleton} from '../../components/img-skeleton/img-skeleton';
-import {Skeleton} from '../../components/skeleton/skeleton';
-import {HistoryDisplayItem} from '../../interfaces/history-item';
+import {HistoryDisplayItem} from '@interfaces/history-item';
+import {ImgSkeleton} from '@shared-components/img-skeleton/img-skeleton';
+import {Skeleton} from '@shared-components/skeleton/skeleton';
 
 export interface HistoryListItemProps {
     isLoading: boolean;

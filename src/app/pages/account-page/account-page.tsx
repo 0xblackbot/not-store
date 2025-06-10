@@ -1,15 +1,16 @@
 import {useMemo} from 'react';
 import {FixedSizeList} from 'react-window';
 
-import {HistoryListItem} from './history-list-item';
-import {ImgSkeleton} from '../../components/img-skeleton/img-skeleton';
-import {UNSAFE_INIT_DATA} from '../../globals';
-import {useSelectCatalogueLoading} from '../../store/catalogue/selectors';
+import {UNSAFE_INIT_DATA} from '@globals';
+import {ImgSkeleton} from '@shared-components/img-skeleton/img-skeleton';
+import {useSelectCatalogueLoading} from '@store/catalogue/selectors';
 import {
     useSelectHistory,
     useSelectHistoryLoading
-} from '../../store/history/selectors';
-import {useDivHeight} from '../../utils/div-height.utils';
+} from '@store/history/selectors';
+import {useDivHeight} from '@utils/div-height.utils';
+
+import {HistoryListItem} from './history-list-item';
 
 const ITEM_SIZE = 68 + 8;
 
