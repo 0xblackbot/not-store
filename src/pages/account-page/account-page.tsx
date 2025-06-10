@@ -2,6 +2,7 @@ import {useMemo} from 'react';
 import {FixedSizeList} from 'react-window';
 
 import {HistoryListItem} from './history-list-item';
+import {ImgSkeleton} from '../../components/img-skeleton/img-skeleton';
 import {UNSAFE_INIT_DATA} from '../../globals';
 import {useSelectCatalogueLoading} from '../../store/catalogue/selectors';
 import {
@@ -37,10 +38,10 @@ export const AccountPage = () => {
             className={`flex flex-1 flex-col gap-8 pt-10 min-h-0 ${!data.isListEmpty && 'touch-none'}`}
         >
             <div className="flex flex-col gap-2 items-center">
-                <img
+                <ImgSkeleton
                     src={UNSAFE_INIT_DATA.user.photo_url}
                     alt={UNSAFE_INIT_DATA.user.name}
-                    className="w-30 h-30 rounded-full object-cover"
+                    className="w-30 h-30 !rounded-full object-cover"
                 />
                 <p className="h1-text">{UNSAFE_INIT_DATA.user.name}</p>
             </div>
