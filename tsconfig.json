@@ -15,10 +15,10 @@
     "jsx": "react-jsx",
     "paths": {
       "@globals": ["./src/globals.ts"],
-      "@pages/*": ["./src/app/pages/*"],
       "@icons/*": ["./src/icons/*"],
       "@interfaces/*": ["./src/interfaces/*"],
       "@navigation/*": ["./src/navigation/*"],
+      "@pages/*": ["./src/pages/*"],
       "@shared-components/*": ["./src/shared-components/*"],
       "@store/*": ["./src/store/*"],
       "@utils/*": ["./src/utils/*"],
