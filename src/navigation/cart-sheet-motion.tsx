@@ -24,7 +24,7 @@ export const CartSheetMotion = () => {
 
             {/* sheet */}
             <motion.div
-                className="fixed inset-x-0 bottom-0 z-50 bg-bw shadow-lg touch-none"
+                className="fixed inset-x-0 bottom-0 z-50 ounded-tl-[20px] rounded-tr-[20px] bg-bw shadow-lg touch-none"
                 style={{y}}
                 initial={{y: '100%'}}
                 animate={{y: 0}}
