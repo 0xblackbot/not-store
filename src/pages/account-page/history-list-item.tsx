@@ -2,6 +2,7 @@ import {FC} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {ListChildComponentProps} from 'react-window';
 
+import {ImgSkeleton} from '../../components/img-skeleton/img-skeleton';
 import {Skeleton} from '../../components/skeleton/skeleton';
 import {HistoryDisplayItem} from '../../interfaces/history-item';
 
@@ -40,10 +41,10 @@ export const HistoryListItem: FC<
             style={style}
             className="flex gap-3 py-2 px-4"
         >
-            <img
+            <ImgSkeleton
                 src={item.data.images[0]}
                 alt={item.data.name}
-                className="w-15 aspect-square object-cover rounded-[12px]"
+                className="w-15 aspect-square object-cover !rounded-[12px]"
             />
             <div className="flex flex-1 justify-between items-center truncate">
                 <div className="truncate">

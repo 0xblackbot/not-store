@@ -2,6 +2,8 @@ import {EmblaCarouselType} from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import {FC, useCallback, useEffect, useState} from 'react';
 
+import {ImgSkeleton} from '../../components/img-skeleton/img-skeleton';
+
 interface Props {
     images: string[];
 }
@@ -23,16 +25,16 @@ export const ImagesCarousel: FC<Props> = ({images}) => {
     }, [emblaApi, onSelect]);
 
     return (
-        <div className="relative overflow-hidden rounded-[16px]">
+        <div className="relative">
             <div ref={emblaRef} className="overflow-hidden">
                 <div className="flex touch-pan-y touch-pinch-zoom">
                     {images.map((image, index) => (
-                        <img
+                        <ImgSkeleton
                             key={index}
                             src={image}
                             alt="Product"
                             loading={index === 0 ? 'eager' : 'lazy'}
-                            className="w-full aspect-square object-cover"
+                            className="min-w-full aspect-square object-cover !rounded-[16px]"
                         />
                     ))}
                 </div>
