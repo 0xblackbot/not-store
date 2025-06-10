@@ -19,7 +19,7 @@ const CATALOGUE_MOCK: CatalogueItem[] = new Array(10)
     .fill(0)
     .map((_, index) => ({...catalogueItemMock, id: index}));
 
-export const CatalogueSkeleton = () => {
+export const CatalogueListSkeleton = () => {
     return (
         <div className="grid grid-cols-2 gap-3 justify-items-center px-4">
             {CATALOGUE_MOCK.map(item => (
