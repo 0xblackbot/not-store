@@ -22,7 +22,7 @@ export const SuccessOverlayProvider: FC<PropsWithChildren> = ({children}) => {
             <AnimatePresence>
                 {visible && (
                     <motion.div
-                        className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm"
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-xs"
                         initial={{opacity: 0}}
                         animate={{opacity: 1}}
                         exit={{opacity: 0}}
@@ -36,7 +36,7 @@ export const SuccessOverlayProvider: FC<PropsWithChildren> = ({children}) => {
                                     src="animations/boomstick.lottie"
                                 />
 
-                                <div className="flex flex-col gap-3 items-center">
+                                <div className="flex flex-col gap-3 items-center text-[var(--c-constant-white)]">
                                     <p className="h0-text">You Got It!</p>
                                     <p className="body-text">
                                         Your purchase is on the way
@@ -45,10 +45,10 @@ export const SuccessOverlayProvider: FC<PropsWithChildren> = ({children}) => {
                             </div>
 
                             <div
-                                className="flex h-12.5 w-full justify-center items-center rounded-[12px] bg-[var(--c-button-bw)]"
+                                className="flex h-12.5 w-full justify-center items-center rounded-[12px] bg-[var(--c-constant-white)]"
                                 onClick={handleClose}
                             >
-                                <p className="big-button-text text-[var(--c-bg-bw)]">
+                                <p className="big-button-text text-[var(--c-constant-black)]">
                                     Awesome
                                 </p>
                             </div>

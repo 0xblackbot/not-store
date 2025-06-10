@@ -21,6 +21,9 @@
     --c-bg-bw: #FFFFFF;
     --c-button-additional: rgba(0, 0, 0, 0.08);
     --c-button-bw: #000000;
+
+    --c-constant-white: #FFFFFF;
+    --c-constant-black: #000000;
 }
 
 .dark {
